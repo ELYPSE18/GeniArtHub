@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Votre Panier - GeniArtHub</title>
+</head>
+<body class="page">
+    <header>
+        <div>
+            <a href="index.html">
+                <img src="img/logo-black.png" alt="Logo GeniArtHub version sombre">
+            </a>
+            <a id="carticon" href="cart.html"><img src="img/cart.svg" alt="Aller au panier"></a>
+        </div>
+    </header>
+
+    <section>
+        <div class="row">
+            <h1>Votre Panier</h1>
+        </div>
+    </section>
+
+    <section id="cart" class="productlist">
+        <div class="products">
+
+
+            
+        </div>
+    </section>
+
+    <section class="order-form">
+        <h2>Formulaire de Commande</h2>
+        <form id="orderForm">
+            <label for="firstName">Prénom :</label>
+            <input type="text" id="firstName" name="firstName" required><br><br>
+
+            <label for="lastName">Nom :</label>
+            <input type="text" id="lastName" name="lastName" required><br><br>
+
+            <label for="address">Adresse :</label>
+            <input type="text" id="address" name="address" required><br><br>
+
+            <label for="city">Ville :</label>
+            <input type="text" id="city" name="city" required><br><br>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <button type="submit">Passer Commande</button>
+            
+        </form>
+    </section>
+
+    <footer>
+        <p><a href="https://www.errantecreation.com/">Errante Creation</a> © 2023 - GeniArtHub</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>
