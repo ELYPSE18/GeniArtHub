@@ -24,9 +24,11 @@ async function fetchData() {
 
             // Mettre à jour les éléments sur la page avec les données récupérées
             document.querySelector('figure img').src = data.image;
+            document.querySelector('.button-buy').setAttribute('data-id', data._id);
             document.querySelector('h1').innerText = data.titre;
             document.querySelector('p').innerText = limitedDescription;
             document.querySelector('.showprice').textContent = `${data.declinaisons[0].prix}€`;
+            document.querySelector('.button-buy').textContent = `Buy ${data.shorttitle}`
 
 
             // Ajouter les options de format (à adapter selon votre modèle de données)
@@ -47,7 +49,9 @@ async function fetchData() {
             });
 
 
-            
+
+
+
 
             // Mettre à jour la description complète dans la balise <aside>
             document.querySelector('aside h2').innerText = `Description de l’oeuvre : ${data.titre}`;
@@ -58,6 +62,14 @@ async function fetchData() {
             buyButton.addEventListener('click', () => {
                 const quantity = parseInt(document.getElementById('quantity').value, 10);
                 const selectedFormat = formatSelect.value;
+
+                showModal(`Vous avez ajouté ${quantity} ${data.shorttitle} au panier !`);
+
+                numberItem();
+
+
+
+
 
 
 
@@ -85,6 +97,8 @@ async function fetchData() {
     // Mettre à jour le localStorage avec les nouvelles commandes
     localStorage.setItem('orders', JSON.stringify(orders));
 
+    numberItem();
+
 
 
     
@@ -100,3 +114,6 @@ async function fetchData() {
 
 // Appeler la fonction pour récupérer et afficher les données au chargement de la page
 document.addEventListener('DOMContentLoaded', fetchData);
+
+
+
